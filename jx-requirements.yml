@@ -9,11 +9,9 @@ cluster:
   azure: {}
   provider: gke
   zone: ""
-gitops: true
+gitops: false
 environments:
   - key: dev
-  - key: staging
-  - key: production
 ingress:
   domain: ""
   externalDNS: false
@@ -22,7 +20,7 @@ ingress:
     enabled: false
     production: false
 kaniko: true
-secretStorage: vault
+secretStorage: local
 storage:
   logs:
     enabled: true
