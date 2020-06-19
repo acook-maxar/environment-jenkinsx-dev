@@ -2,19 +2,15 @@ autoUpdate:
   enabled: false
   schedule: ""
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: true
-  project: ""
-  azure: {}
-  provider: gke
-  zone: ""
+  clusterName: "jenkinsx"
+  environmentGitOwner: "acook-maxar"
+  environmentGitPublic: false
+  provider: eks
+  zone: "us-east-1"
 gitops: false
-environments:
-  - key: dev
 ingress:
-  domain: ""
-  externalDNS: false
+  domain: "*.jx.jenkins.gcsdev.com"
+  externalDNS: true
   tls:
     email: ""
     enabled: false
@@ -24,13 +20,13 @@ secretStorage: local
 storage:
   logs:
     enabled: true
-    url: ""
+    url: "s3://jenkinsx-logs-ca0facea-9adc-4757-bd7d-ffbc8a96a3e2"
   reports:
     enabled: true
-    url: ""
+    url: "s3://jenkinsx-reports-23f766a4-4735-479d-8c23-b71e982f63f4"
   repository:
     enabled: true
-    url: ""
+    url: "s3://jenkinsx-repository-38ae8de5-1b80-41ad-8280-5bae31dae738"
 versionStream:
   ref: 2.1.46+cjxd.10
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
